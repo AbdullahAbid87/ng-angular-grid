@@ -13,7 +13,6 @@ export class NgAngularGridModule {
       paddingUnit?:"mm"|"cm"|"in"|"px"|"pt"|"pc"|"em"|"ex"|"ch"|"rem"|"vw"|"vh"|"vmin"|"vmax"|"%",
       marginUnit?:"mm"|"cm"|"in"|"px"|"pt"|"pc"|"em"|"ex"|"ch"|"rem"|"vw"|"vh"|"vmin"|"vmax"|"%"
    }): ModuleWithProviders<NgAngularGridModule>{
-    console.log(configuration);
     return {
       ngModule: NgAngularGridModule,
       providers: [
