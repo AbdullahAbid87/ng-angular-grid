@@ -1,6 +1,6 @@
-import { Component, ElementRef, HostBinding, Inject, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostBinding, Inject, Input, OnInit, ViewChild, ViewEncapsulation,Injectable, Optional } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-
+@Injectable()
 @Component({
   selector: 'ng-grid-column',
   templateUrl: './ng-grid-column.component.html',
@@ -57,12 +57,12 @@ export class NgGridColumnComponent implements OnInit {
     }
     sanitizer:DomSanitizer;
     configuration:any;
-    constructor(sanitizer: DomSanitizer,  @Inject('config') private config:any) {
+    constructor(sanitizer: DomSanitizer,@Optional() @Inject('config') private config:any) {
       this.sanitizer=sanitizer;
       this.configuration=config;
      }
-  // Style Bindings
-  @HostBinding('style') get NgAngularStyle() { 
+    // Style Bindings
+    @HostBinding('style') get NgAngularStyle() { 
     let styleString=``;
       // Set Margin
     if(this.ngMargin) styleString+=`margin:${this.ngMargin}${this.configuration.marginUnit?this.configuration.marginUnit:"rem"};`;
