@@ -66,7 +66,7 @@ You can sepecify the vertical sections based on the screen size as well by using
 | __ColMd__ | `number` | __≥ 768px__ |
 | __ColSm__ | `number` | __≥ 576px__ |
 
-<br/>
+
 ```html
 <ng-grid-container>
     <ng-grid-row >
@@ -81,8 +81,10 @@ You can sepecify the vertical sections based on the screen size as well by using
 ```
 
 ## Common Parameters
-These Parameters can be used with all of the components
+These Parameters can be used with all of the components.<br/>
+
 __The margin and padding have a default Unit of `rem`__
+
 | Name | Type |Description|
 | ------ | ------ |------ |
 | __ngMargin__ | `number` | Margin from all sides 
