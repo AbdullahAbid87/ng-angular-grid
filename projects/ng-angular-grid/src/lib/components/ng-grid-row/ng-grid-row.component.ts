@@ -1,6 +1,6 @@
-import { Component, ElementRef, HostBinding, Inject, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostBinding, Inject, Input, OnInit, ViewChild, ViewEncapsulation,Injectable, Optional } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-
+@Injectable()
 @Component({
   selector: 'ng-grid-row',
   templateUrl: './ng-grid-row.component.html',
@@ -10,7 +10,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 export class NgGridRowComponent implements OnInit {
   sanitizer:DomSanitizer;
   configuration:any;
-  constructor(sanitizer: DomSanitizer,  @Inject('config') private config:any) {
+  constructor(sanitizer: DomSanitizer, @Optional()  @Inject('config') private config:any) {
     this.sanitizer=sanitizer;
     this.configuration=config;
    }
