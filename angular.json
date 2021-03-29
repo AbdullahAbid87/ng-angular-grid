@@ -1,7 +1,177 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "880c6add-7ccd-4d78-8be6-165164b1f07c"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ng-angular-grid": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "root": "projects/ng-angular-grid",
+      "sourceRoot": "projects/ng-angular-grid/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-angular-grid/tsconfig.lib.json",
+            "project": "projects/ng-angular-grid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-angular-grid/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-angular-grid/src/test.ts",
+            "tsConfig": "projects/ng-angular-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-angular-grid/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-angular-grid/tsconfig.lib.json",
+              "projects/ng-angular-grid/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+       
+      }
+    },
+    "ng-angular-grid-example": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-angular-grid-example",
+      "sourceRoot": "projects/ng-angular-grid-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-angular-grid-example",
+            "index": "projects/ng-angular-grid-example/src/index.html",
+            "main": "projects/ng-angular-grid-example/src/main.ts",
+            "polyfills": "projects/ng-angular-grid-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-angular-grid-example/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-angular-grid-example/src/favicon.ico",
+              "projects/ng-angular-grid-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-angular-grid-example/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-angular-grid-example/src/environments/environment.ts",
+                  "with": "projects/ng-angular-grid-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-angular-grid-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-angular-grid-example:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-angular-grid-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-angular-grid-example/src/test.ts",
+            "polyfills": "projects/ng-angular-grid-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-angular-grid-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-angular-grid-example/karma.conf.js",
+            "assets": [
+              "projects/ng-angular-grid-example/src/favicon.ico",
+              "projects/ng-angular-grid-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-angular-grid-example/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-angular-grid-example/tsconfig.app.json",
+              "projects/ng-angular-grid-example/tsconfig.spec.json",
+              "projects/ng-angular-grid-example/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-angular-grid-example/e2e/protractor.conf.js",
+            "devServerTarget": "ng-angular-grid-example:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-angular-grid-example:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-angular-grid"
 }
