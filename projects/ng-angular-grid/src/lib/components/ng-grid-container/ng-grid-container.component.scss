@@ -1,0 +1,62 @@
+:host{
+    &.ng-grid-container {
+        display:  block;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width:576px) {
+        &.ng-grid-container {
+            max-width: 540px
+        }
+    }
+    @media (min-width:768px) {
+        &.ng-grid-container {
+            max-width: 720px
+        }
+    }
+    @media (min-width:992px) {
+        &.ng-grid-container {
+            max-width: 960px
+        }
+    }
+    
+    @media (min-width:1200px) {
+        &.ng-grid-container {
+            max-width: 1140px
+        }
+    }
+  
+    &.ng-grid-container-fluid {
+        display: block;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto
+    }
+    	// Hide 
+	@media (max-width:576px) {
+		&.ng-hide-sm{
+			display: none;
+		}
+	}
+	@media (min-width:577px) and (max-width:768px) {
+		&.ng-hide-md{
+			display: none;
+		}
+	}
+	@media (min-width:769px) and (max-width:1200px) {
+		&.ng-hide-lg{
+			display: none;
+		}
+	}
+	@media (min-width:1201px)  {
+		&.ng-hide-lg{
+			display: none;
+		}
+	}
+}

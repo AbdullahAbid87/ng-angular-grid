@@ -1,0 +1,32 @@
+{
+  "name": "ng-angular-grid",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.2.7",
+    "@angular/core": "^11.2.7"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "description": "Grid System used for Desiging",
+  "author": "Abdullah Abid (https://www.fiverr.com/abdullah_427)",
+  "keywords": [
+    "grid",
+    "ng-angular-grid",
+    "angular-grid"
+  ],
+  "main": "karma.conf.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdullahAbid87/ng-angular-grid.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AbdullahAbid87/ng-angular-grid/issues"
+  },
+  "homepage": "https://github.com/AbdullahAbid87/ng-angular-grid#readme"
+}
