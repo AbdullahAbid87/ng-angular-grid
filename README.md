@@ -22,7 +22,7 @@ import { NgAngularGridModule } from "ng-angular-grid";
 })
 export class AppModule { }
 ```
-#### Container
+## Container
 `ng-grid-container` is used to add padding, contain and align your content according to the device.
 By Default the `ng-grid-container` component has a `margin-left` and `margin-right` of **15px** but this can be removed by using `ngFluid` parameter.
 
@@ -37,7 +37,7 @@ By Default the `ngFluid` is `false`
  Container with no margin from left and right
 </ng-grid-container>
 ```
-### Row
+## Row
 `ng-grid-row` component is used to create a horizontal group  of columns. The `ng-grid-column` component must be an immediate children of the this component.
 
 By default the `ng-grid-row` component has a `gutter` size of __-15px__ but this can be removed by using `ngNoGutters` parameter 
@@ -45,7 +45,7 @@ By default the `ng-grid-row` component has a `gutter` size of __-15px__ but this
 | ------ | ------ |------ |
 | __ngNoGutters__ | `boolean` | if `true` the margin left and right of `ng-grid-row` will be removed, furthermore the padding left and right of `ng-grid-column` will also be removed
 
-### Column
+## Column
 In `ng-angular-grid` the screen is divided into **12**  vertical sections. You can sepcify how many vertical sections you want each column to have by passing `Col` paramater into `ng-grid-column` component.
 
 ```html
@@ -66,6 +66,7 @@ You can sepecify the vertical sections based on the screen size as well by using
 | __ColMd__ | `number` | __≥ 768px__ |
 | __ColSm__ | `number` | __≥ 576px__ |
 
+<br/>
 
 ```html
 <ng-grid-container>
@@ -81,14 +82,16 @@ You can sepecify the vertical sections based on the screen size as well by using
 ```
 
 ## Common Parameters
-These Parameters can be used with all of the components.<br/>
+These Parameters can be used with all of the components
+
+<br/>
 
 __The margin and padding have a default Unit of `rem`__
 
 | Name | Type |Description|
 | ------ | ------ |------ |
 | __ngMargin__ | `number` | Margin from all sides 
-| __ngMarginTop__ | `number` | Margin from Top `
+| __ngMarginTop__ | `number` | Margin from Top 
 | __ngMarginRight__ | `number` | Margin from Right 
 | __ngMarginBottom__ | `number` | Margin from the   Bottom
 | __ngMarginLeft__ | `number` | Margin from the Left
@@ -110,20 +113,16 @@ When importing  you can provide two parameters to the `NgAngularGridModule` spec
 | paddingUnit | string |
 | marginUnit | string |
 
+<br/>
+
 Allowed __Unit__ types are 
+
 `mm`|`cm`|`in`|`px`|`pt`|`pc`|`em`|`ex`|`ch`|`rem`|`vw`|`vh`|`vmin`|`vmax`|`%`
 
 ```js
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import {NgAngularGridModule} from "ng-angular-grid";
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-  ],
+  declarations: [...],
   imports: [
     NgAngularGridModule.forRoot({
         paddingUnit:"px",
